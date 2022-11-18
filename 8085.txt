@@ -71,7 +71,7 @@ HLT
 
 # Division of 2 8-bit numbers
 
-LDA C 2000
+LDA 2000
 MOV C, A
 LDA 2001
 MVI B, 00
@@ -91,7 +91,6 @@ HLT
 LDA 3000
 MOV C, A 
 DCR C 
-OCR C 
 LP1: MOV D, C 
 DCR D 
 MOV B, A 
