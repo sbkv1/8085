@@ -104,4 +104,64 @@ STA 4000
 HLT
 
 
-# 
+# Fibonacci series
+
+MVI E, 00
+LDA 2000
+LXI H, 3000
+MOV D, A 
+MVI A, 01
+MOV M, A 
+INX H 
+DCR D 
+MVI B, 01
+MOV M, B
+INX H 
+DCR D 
+LP1: ADD B
+MOV M, A 
+INX H 
+MOV C, A 
+MOV A, B
+MOV B, C 
+DCR D 
+JC LP2 
+JNZ LP1
+LP1: INR E
+HLT 
+
+
+# Smallest Number
+
+LXI H, 2000
+MOV C, M 
+INX H 
+MOV A, M 
+DCR C 
+INX H 
+LOOP: CMP M 
+JC SKIP 
+MOV A, M 
+SKIP: INX H 
+DCR C 
+JNZ LOOP 
+STA 4000
+HLT 
+
+
+# Lrgest number
+
+LXI H, 2000
+MOV C, M 
+INX H 
+MOV A, M 
+DCR C 
+INX H 
+LOOP: CMP M 
+JNC SKIP
+MOV A, M 
+SKIP: INX H 
+DCR C 
+JNZ LOOP 
+STA 4000
+HLT 
